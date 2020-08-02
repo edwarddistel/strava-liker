@@ -1,0 +1,2 @@
+# cron job to run the strava-liker app every hour from within a Docker image
+0 * * * * /usr/local/bin/node /usr/src/app/strava.js
