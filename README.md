@@ -20,7 +20,8 @@ But it has a special flavor of Debian that doesn't like Puppeteer (aka headless 
 To run via Docker:
 - Install Docker on your server/machine
 - In the repo run `docker build -t strava-liker .`
+- Then `docker run -d strava-liker`
 
 And you're done. There is a built-in cron job inside the container that will run the app every hour on the hour.
 
-If you want logging you can log to a file in the container, and then create a separate cron job outside the container to copy the file out of there, or you can change the `CMD` command in the `Dockerfile` to `CMD ["node", "strava.js"]` and then a cron job to `docker run` the image and output that to a log.
+The Docker container will produce a log in `/usr/src/app/cron-log.txt`; you could set a cron job in your parent container to copy that down to your host, `docker cp <host ID from docker ps>:/usr/src/app/cron-log.txt /my/destination`.
