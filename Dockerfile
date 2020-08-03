@@ -35,6 +35,7 @@ RUN npm i puppeteer \
 WORKDIR /usr/src/app
 COPY package*.json ./
 COPY . .
+COPY .env .env
 RUN apt-get update && apt-get install -y cron vim
 COPY strava-cron /etc/cron.d/strava-cron
 RUN chmod 0644 /etc/cron.d/strava-cron
