@@ -4,6 +4,7 @@ const puppeteer = require('puppeteer');
 async function main() {
     try {
         const url = "https://www.strava.com/login";
+        // If running this in Docker the executable path needs to be google-chrome-unstable
         const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-browser', args: ['--no-sandbox']});
         const page = await browser.newPage();
         await page.setViewport({width: 1200, height: 720});

@@ -8,6 +8,16 @@ I follow a lot of people and it can be a lot of clicking to like everyone's dail
 
 - `git clone` this directory
 - Update `.env` with your Strava username and password
+- Run `nvm use` (install that version of Node if necessary)
+
+If running in Docker you'll need to change the executable path for Chromium in line 8:
+
+```
+const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-browser', args: ['--no-sandbox']});
+```
+
+Swap out `/usr/bin/chromium-browser` for `google-chrome-unstable`. For Windows you'll probably need to change it as well.
+
 - Run `npm install`
 - Run `node strava.js`
 
