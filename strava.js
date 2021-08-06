@@ -4,7 +4,7 @@ const puppeteer = require('puppeteer');
 async function main() {
     try {
         const url = "https://www.strava.com/login";
-        const browser = await puppeteer.launch({executablePath: 'google-chrome-unstable', args: ['--no-sandbox']});
+        const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-browser', args: ['--no-sandbox']});
         const page = await browser.newPage();
         await page.setViewport({width: 1200, height: 720});
         await page.goto(url, { waitUntil: 'networkidle0' }); // wait until page load
@@ -21,7 +21,7 @@ async function main() {
             if (notifications) {
                 notifications.click();
             }
-            const kudosButtons = document.querySelectorAll('.js-add-kudo');
+            const kudosButtons = document.querySelectorAll('button[data-testid]');
             kudosButtons.forEach((btn) => {
                 btn.click();
                 ctr++;

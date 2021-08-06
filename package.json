@@ -8,13 +8,17 @@
     "url": "https://github.com/edwarddistel/strava-liker"
   },
   "scripts": {
-    "start": "node strava.js"
+    "start": "node strava.js",
+    "update": "ncu -u && npm update && rm package-lock.json && npm install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "puppeteer": "^5.2.0"
+    "dotenv": "^10.0.0",
+    "puppeteer": "^10.2.0"
+  },
+  "devDependencies": {
+    "npm-check-updates": "^11.8.3"
   }
 }
