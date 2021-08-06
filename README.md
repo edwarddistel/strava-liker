@@ -19,7 +19,7 @@ const browser = await puppeteer.launch({executablePath: '/usr/bin/chromium-brows
 Swap out `/usr/bin/chromium-browser` for `google-chrome-unstable`. For Windows you'll probably need to change it as well.
 
 - Run `npm install`
-- Run `node strava.js`
+- Run `npm start`
 
 ## Automating this in the background
 
