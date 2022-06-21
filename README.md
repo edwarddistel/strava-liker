@@ -7,7 +7,7 @@ I follow a lot of people and it can be a lot of clicking to like everyone's dail
 ## How it works
 
 - `git clone` this directory
-- Update `.env` with your Strava username and password
+- Copy `.env.example` to `.env` and update with your Strava username and password
 - Run `nvm use` (install that version of Node if necessary)
 
 If running in Docker you'll need to change the executable path for Chromium in line 8:
@@ -28,9 +28,10 @@ I run a NAS and wanted it to do this for me, instead of having my personal or wo
 But it has a special flavor of Debian that doesn't like Puppeteer (aka headless Chrome) so I created a Dockerfile for it so it can run in there.
 
 To run via Docker:
+- In `src/strava.js`, uncomment `line 10` and comment out `line 11` (different Puppeteer launch command for inside Docker)
 - Install Docker on your server/machine
-- In the repo run `docker build -t strava-liker .`
-- Then `docker run -d strava-liker`
+- In the repo run `docker build -t "strava-liker:latest" .`
+- Then `docker run -d --name strava-liker strava-liker:latest `
 
 And you're done. There is a built-in cron job inside the container that will run the app every hour on the hour.
 

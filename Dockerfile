@@ -1,4 +1,4 @@
-FROM node:10-slim
+FROM node:14-slim
 
 RUN apt-get update \
     && apt-get install -y wget gnupg apt-transport-https apt-utils \

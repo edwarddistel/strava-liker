@@ -1,6 +1,6 @@
 {
   "name": "strava-liker",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "",
   "main": "strava.js",
   "repository": {
@@ -8,15 +8,15 @@
     "url": "https://github.com/edwarddistel/strava-liker"
   },
   "scripts": {
-    "start": "node strava.js",
+    "start": "node src/strava.js",
     "update": "ncu -u && npm update && rm package-lock.json && npm install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^10.0.0",
-    "puppeteer": "^10.2.0"
+    "dotenv": "16.0.1",
+    "puppeteer": "14.4.1"
   },
   "devDependencies": {
     "npm-check-updates": "^11.8.3"
