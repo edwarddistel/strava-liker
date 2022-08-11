@@ -35,7 +35,7 @@ const puppeteer = require('puppeteer');
             if (notifications) {
                 notifications.click();
             }
-            const kudosButtons = document.querySelectorAll('button[data-testid]');
+            const kudosButtons = document.querySelectorAll('button[data-testid="kudos_button"]');
             kudosButtons.forEach((btn) => {
                 btn.click();
                 ctr++;
