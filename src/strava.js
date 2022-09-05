@@ -26,8 +26,11 @@ const puppeteer = require('puppeteer');
         await page.click('#login-button');
         console.log("Clicked login");
     
-        // Waiting 4 seconds appears more reliable than waiting for a selector
+        // Waiting 4 seconds seems to make this more reliable
         await page.waitForTimeout(4000);
+        console.log("Waited 4 seconds, now waiting for network idle");
+
+        await page.waitForNetworkIdle();
 
         const textContent = await page.evaluate(() => {
             let ctr = 0;
