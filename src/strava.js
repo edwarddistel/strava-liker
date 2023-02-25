@@ -32,7 +32,7 @@ const puppeteer = require('puppeteer');
         console.log(`Waited ${seconds} seconds`);
 
         const notificationsButtonSelector = "button[aria-controls='notifications-list']";
-        const kudsButtonsSelector = 'div[class^="MediaActions"] button[data-testid="kudos_button"]';
+        const kudsButtonsSelector = 'div[test-id^="web-feed-entry"] button[data-testid="kudos_button"]';
 
         // Page evaluate works most of the time when trying to click buttons...but then sometimes it doesn't
         await page.evaluate(() => {
