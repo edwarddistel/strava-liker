@@ -35,7 +35,7 @@ const puppeteer = require('puppeteer');
         console.log(`Waited ${seconds} seconds`);
 
         
-        const notificationsButtonSelector = `button[class^="src-Notifications__nav-bar-button"]`;
+        const notificationsButtonSelector = `button[class^="src-Notifications"]`;
         const kudosButtonsSelector = `button[data-testid="kudos_button"]`;
 
 
